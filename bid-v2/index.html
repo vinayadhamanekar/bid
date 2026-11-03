@@ -2,6 +2,13 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
+  <!-- Relative paths (css/, js/, assets/) need the folder URL to end in "/".
+       Hosts like Vercel serve /bid-v2 without the slash, so add it before anything loads. -->
+  <script>
+    (function (l) {
+      if (l.protocol !== "file:" && !/\/$|\.html?$/.test(l.pathname)) l.replace(l.pathname + "/" + l.search + l.hash);
+    })(window.location);
+  </script>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Benefit Intelligence &amp; Design | Health Chain</title>
   <meta name="description" content="Cost reconciliation for Medicare Advantage and Medicaid health plans. We compare your finance costs, your regulatory cost report and your Medicare bid inputs (BPT), and show each difference down to the source records.">

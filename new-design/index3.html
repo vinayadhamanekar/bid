@@ -1,0 +1,588 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#FFF8F1">
+  <!--
+    Plumbline (working name) · version 3 (index3.html): index2.html content with an orange palette (css/v3/, js/main3.js)
+    Same as index2.html otherwise: Plus Jakarta Sans header + heading font,
+    header scrolls with the page, Resources renamed Research, "How it works" console stays in view.
+    Funnel: free public-data tools → Pro workspace → Bid Platform on the plan's own data.
+    Lookups, forms and demo answers are front-end only (js/main.js). Figures are illustrative.
+  -->
+  <title>Plumbline · Know your market before you bid</title>
+  <meta name="description" content="Free contract scorecards, county market sheets, V28 impact checks and a Medicaid RFP calendar, built on public CMS and state data. Then bring your own data and see actual cost against your bid.">
+  <meta property="og:title" content="Know your market before you bid · Plumbline">
+  <meta property="og:description" content="Public CMS and state data for Medicare Advantage and Medicaid plans, free to start. Bring your own data to see actual vs bid.">
+  <link rel="icon" href="assets/img/logo3.svg" type="image/svg+xml">
+  
+  <link rel="preload" href="fonts/geist-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="fonts/plus-jakarta-sans-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="css/v3/base.css">
+  <link rel="stylesheet" href="css/v3/components.css">
+  <link rel="stylesheet" href="css/v3/sections.css">
+  <link rel="stylesheet" href="css/v3/page.css">
+  <script>document.documentElement.classList.remove('no-js');</script>
+</head>
+<body>
+<a href="#main" class="skip-link">Skip to content</a>
+<div class="progress" aria-hidden="true"><span id="progress-bar"></span></div>
+
+<!-- ============ Navigation ============ -->
+<header class="nav" id="nav">
+  <div class="nav__bar">
+    <a href="#top" class="brand" aria-label="Plumbline home">
+      <img src="assets/img/logo3.svg" alt="" width="30" height="30">
+      <span class="brand__word">Plumbline</span>
+    </a>
+
+    <nav class="nav__links" aria-label="Primary">
+      <a href="#free-tools" class="nav__link">Free tools</a>
+      <div class="nav__group" data-dropdown>
+        <button type="button" class="nav__link nav__trigger" aria-expanded="false" aria-controls="dd-data">
+          Data
+          <svg width="10" height="10" viewBox="0 0 10 10" aria-hidden="true"><path d="M2 3.5l3 3 3-3" stroke="currentColor" stroke-width="1.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+        <div class="mega" id="dd-data">
+          <div class="mega__grid">
+            <a href="#data" class="mega__item" data-filter-link="ma"><span class="dot" style="--c:var(--indigo)"></span><span><b>Medicare Advantage &amp; Part D</b><small>Enrollment, PBP benefits, ratebooks, Stars, MLR, risk model.</small></span></a>
+            <a href="#data" class="mega__item" data-filter-link="medicaid"><span class="dot" style="--c:var(--mint)"></span><span><b>Medicaid</b><small>MCO enrollment, rate certifications, quality, procurements.</small></span></a>
+            <a href="#data" class="mega__item" data-filter-link="duals"><span class="dot" style="--c:#9B5DE5"></span><span><b>Dual eligibles</b><small>D-SNP integration status, SNP reports, dual enrollment.</small></span></a>
+            <a href="#data" class="mega__item" data-filter-link="providers"><span class="dot" style="--c:var(--amber)"></span><span><b>Providers and cost</b><small>NPPES, network criteria, Medicare FFS cost, SDOH.</small></span></a>
+          </div>
+          <a href="#data" class="mega__foot" data-filter-link="all">Every source we hold, with its refresh date <span aria-hidden="true">→</span></a>
+        </div>
+      </div>
+      <a href="#bid-platform" class="nav__link">Bid Platform</a>
+      <a href="#plans" class="nav__link">Plans and pricing</a>
+      <a href="#research" class="nav__link">Research</a>
+    </nav>
+
+    <div class="nav__actions">
+      <a href="#free-tools" class="nav__ghost">Start free</a>
+      <a href="#contact" class="btn btn--ink btn--sm" data-program="demo">Book a demo</a>
+      <button type="button" class="burger" id="burger" aria-expanded="false" aria-controls="sheet" aria-label="Open menu">
+        <span></span><span></span>
+      </button>
+    </div>
+  </div>
+
+  <div class="sheet" id="sheet" hidden>
+    <nav class="sheet__links" aria-label="Mobile">
+      <a href="#free-tools"><span>01</span>Free tools</a>
+      <a href="#data"><span>02</span>Data</a>
+      <a href="#bid-platform"><span>03</span>Bid Platform</a>
+      <a href="#plans"><span>04</span>Plans and pricing</a>
+      <a href="#research"><span>05</span>Research</a>
+    </nav>
+    <div class="sheet__cta">
+      <a href="#free-tools" class="btn btn--line">Start free</a>
+      <a href="#contact" class="btn btn--ink" data-program="demo">Book a demo</a>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+
+  <!-- ============ Hero ============ -->
+  <section class="hero" id="top">
+    <div class="hero__bg" aria-hidden="true">
+      <div class="hero__grid"></div>
+      <div class="orb orb--a"></div>
+      <div class="orb orb--b"></div>
+    </div>
+
+    <div class="wrap hero__wrap">
+      <div class="hero__copy">
+        <a href="#v28" class="pill reveal">
+          <span class="pill__tag">New · free</span>
+          <span class="pill__long">The V28 impact check for any MA contract</span>
+          <span class="pill__short">V28 impact check</span>
+          <span aria-hidden="true">→</span>
+        </a>
+
+        <h1 class="display reveal" style="--d:.08s">Know your market <span class="mark">before you bid.</span></h1>
+
+        <p class="lede reveal" style="--d:.16s">Every public CMS and state dataset for Medicare Advantage and Medicaid, cleaned and connected. Start free with your contract's scorecard. When you're ready, bring your own data and see actual cost against your bid.</p>
+
+        <form class="lookup lookup--hero reveal" style="--d:.24s" data-lookup="contract" data-hero novalidate>
+          <label for="hero-contract" class="sr-only">MA contract ID</label>
+          <div class="lookup__row">
+            <span class="lookup__icon" aria-hidden="true">
+              <svg width="18" height="18" viewBox="0 0 20 20" fill="none"><circle cx="9" cy="9" r="6" stroke="currentColor" stroke-width="1.8"/><path d="M14 14l3.5 3.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+            </span>
+            <input id="hero-contract" name="contract" type="text" autocomplete="off" maxlength="5" spellcheck="false" placeholder="MA contract ID, e.g. H1234">
+            <button type="submit" class="btn btn--indigo">Get free scorecard</button>
+          </div>
+          <p class="lookup__status" data-lookup-status role="status" aria-live="polite"></p>
+          <p class="lookup__hint">Enrollment, share, benefits, Stars and benchmark, from public CMS data. No login needed.</p>
+        </form>
+      </div>
+
+      <!-- Interactive scorecard visual (illustrative) -->
+      <div class="hero__visual reveal" style="--d:.2s" data-parallax-root>
+        <div class="scorecard" data-depth="10">
+          <div class="scorecard__head">
+            <div>
+              <p class="scorecard__eyebrow">Contract scorecard</p>
+              <p class="scorecard__title"><span id="sc-id">H····</span> · top 40 counties</p>
+            </div>
+            <span class="tag">Illustrative</span>
+          </div>
+
+          <div class="hexmap" id="hexmap" aria-hidden="true"></div>
+          <p class="scorecard__readout" id="hex-readout" aria-live="polite">Hover a county to read its share.</p>
+
+          <div class="scorecard__kpis">
+            <div class="kpi"><span class="kpi__label">Market share</span><span class="kpi__val"><span data-count="22.8" data-dec="1">22.8</span>%</span><span class="kpi__delta is-down">▼ 1.9 pts</span></div>
+            <div class="kpi"><span class="kpi__label">Star rating</span><span class="kpi__val"><span data-count="4.0" data-dec="1">4.0</span>★</span><span class="kpi__delta">3 measures at risk</span></div>
+            <div class="kpi"><span class="kpi__label">Benchmark</span><span class="kpi__val">+<span data-count="4.8" data-dec="1">4.8</span>%</span><span class="kpi__delta is-up">CY2027</span></div>
+          </div>
+        </div>
+
+        <div class="float float--risk" data-depth="26">
+          <p class="float__label">V28 risk score</p>
+          <p class="float__val">−3.1%</p>
+          <svg class="spark" viewBox="0 0 120 36" aria-hidden="true"><path d="M2 8 L22 10 L40 9 L58 16 L76 18 L94 26 L118 30" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+
+        <a href="#free-tools" class="float float--bot" data-depth="18">
+          <span class="float__avatar" aria-hidden="true"><img src="assets/img/logo3.svg" alt="" width="28" height="28"></span>
+          <span><b>Bidding for CY2028?</b><br>Get your free scorecard →</span>
+        </a>
+      </div>
+    </div>
+
+    <!-- Data ticker -->
+    <div class="ticker" aria-label="Datasets included">
+      <div class="ticker__track" id="ticker">
+        <ul class="ticker__list">
+          <li><i style="--c:var(--indigo)"></i>MA enrollment</li>
+          <li><i style="--c:var(--indigo)"></i>Plan Benefit Package</li>
+          <li><i style="--c:var(--amber)"></i>Star Ratings</li>
+          <li><i style="--c:var(--indigo)"></i>County ratebook</li>
+          <li><i style="--c:var(--mint)"></i>Medicaid MCO enrollment</li>
+          <li><i style="--c:var(--amber)"></i>CMS-HCC V28</li>
+          <li><i style="--c:var(--indigo)"></i>MA MLR</li>
+          <li><i style="--c:var(--mint)"></i>Rate certifications</li>
+          <li><i style="--c:var(--indigo)"></i>HSD criteria</li>
+          <li><i style="--c:#9B5DE5"></i>NPPES</li>
+          <li><i style="--c:#9B5DE5"></i>D-SNP integration</li>
+          <li><i style="--c:var(--mint)"></i>State RFPs</li>
+          <li><i style="--c:var(--amber)"></i>FFS geographic variation</li>
+          <li><i style="--c:var(--mint)"></i>Core Set quality</li>
+          <li><i style="--c:var(--coral)"></i>Your claims</li>
+          <li><i style="--c:var(--coral)"></i>Your BPT</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ Ask it: public data first, then your data ============ -->
+  <section class="section ask" id="ask">
+    <div class="wrap">
+      <div class="ask__head">
+        <div>
+          <p class="kicker reveal">How it works</p>
+          <h2 class="h2 reveal" style="--d:.06s">Three answers from public data. The fourth from yours.</h2>
+        </div>
+        <p class="lede reveal" style="--d:.12s">Ask in plain English. Every answer shows the steps it took and the files it read, so your actuarial and finance teams can check the work.</p>
+      </div>
+
+      <div class="ask__body">
+        <div class="ask__tabs" role="tablist" aria-label="Topics" id="ask-tabs"><!-- rendered by js --></div>
+
+        <div class="console reveal" style="--d:.1s">
+          <div class="console__bar">
+            <span class="console__dots" aria-hidden="true"><i></i><i></i><i></i></span>
+            <span class="console__title" id="console-title">Workspace</span>
+            <span class="tag tag--dark">Illustrative</span>
+          </div>
+          <div class="console__panel" id="ask-panel" role="tabpanel" aria-live="polite"><!-- rendered by js --></div>
+          <div class="console__foot">
+            <div class="console__qs" id="ask-questions" aria-label="Example questions"></div>
+          </div>
+        </div>
+      </div>
+      <p class="ask__note">Demo answers use illustrative figures and anonymized plans. Your workspace answers from the real files, with the source on every number.</p>
+    </div>
+  </section>
+
+  <!-- ============ Free tools (bento) ============ -->
+  <section class="section tools" id="free-tools">
+    <div class="wrap">
+      <div class="split-head">
+        <div>
+          <p class="kicker reveal">Free tools</p>
+          <h2 class="h2 reveal" style="--d:.06s">Four answers your team needs this bid season, free from public data.</h2>
+        </div>
+        <p class="lede reveal" style="--d:.12s">No login, no data to share. Each tool returns a sourced report you can forward, and shows what changes once your own data is in.</p>
+      </div>
+
+      <div class="bento">
+        <article class="tile tile--feature reveal" id="scorecard">
+          <div class="tile__top">
+            <span class="badge badge--light">Medicare Advantage</span>
+            <span class="tile__num">01</span>
+          </div>
+          <h3 class="h3">Contract scorecard</h3>
+          <p class="tile__desc">Your contract against every competitor in your counties: enrollment and share, benefits and premiums, Stars and benchmark.</p>
+          <div class="mini-rank" aria-hidden="true">
+            <div><span>Competitor A</span><i style="--w:82%"></i><b>41.2%</b></div>
+            <div class="is-you"><span>Your contract</span><i style="--w:46%"></i><b>22.8%</b></div>
+            <div><span>Competitor B</span><i style="--w:36%"></i><b>18.1%</b></div>
+          </div>
+          <form class="lookup lookup--dark" data-lookup="contract" novalidate>
+            <label for="tool-contract" class="sr-only">MA contract ID</label>
+            <div class="lookup__row">
+              <input id="tool-contract" type="text" autocomplete="off" maxlength="5" spellcheck="false" placeholder="H1234">
+              <button type="submit" class="btn btn--lime btn--sm">Run</button>
+            </div>
+            <p class="lookup__status" data-lookup-status role="status" aria-live="polite"></p>
+          </form>
+          <p class="tile__src">CMS enrollment · PBP · Stars · ratebook</p>
+        </article>
+
+        <article class="tile reveal" style="--d:.06s" id="county">
+          <div class="tile__top">
+            <span class="badge">Medicare Advantage</span>
+            <span class="tile__num">02</span>
+          </div>
+          <h3 class="h3">County market sheet</h3>
+          <p class="tile__desc">One county, every plan on sale: share, growth, exits, $0-premium plans, supplemental benefits and the benchmark against FFS cost.</p>
+          <form class="lookup" data-lookup="county" novalidate>
+            <label for="tool-county" class="sr-only">County</label>
+            <div class="lookup__row">
+              <input id="tool-county" type="text" autocomplete="off" placeholder="County, State">
+              <button type="submit" class="btn btn--ink btn--sm">Run</button>
+            </div>
+            <p class="lookup__status" data-lookup-status role="status" aria-live="polite"></p>
+          </form>
+          <p class="tile__src">CMS enrollment · PBP · penetration · FFS cost</p>
+        </article>
+
+        <article class="tile reveal" style="--d:.12s" id="v28">
+          <div class="tile__top">
+            <span class="badge">Risk adjustment</span>
+            <span class="tile__num">03</span>
+          </div>
+          <h3 class="h3">V28 impact check</h3>
+          <p class="tile__desc">What the full CMS-HCC V28 phase-in does to your average risk score and revenue, by county, with the conditions that drive it.</p>
+          <form class="lookup" data-lookup="contract" novalidate>
+            <label for="tool-v28" class="sr-only">MA contract ID for the V28 check</label>
+            <div class="lookup__row">
+              <input id="tool-v28" type="text" autocomplete="off" maxlength="5" spellcheck="false" placeholder="H1234">
+              <button type="submit" class="btn btn--ink btn--sm">Run the V28 check</button>
+            </div>
+            <p class="lookup__status" data-lookup-status role="status" aria-live="polite"></p>
+          </form>
+          <p class="tile__src">CMS-HCC V24 · V28 · county risk scores</p>
+        </article>
+
+        <article class="tile tile--wide reveal" style="--d:.06s" id="rfp">
+          <div class="tile__wide-copy">
+            <div class="tile__top">
+              <span class="badge badge--mint">Medicaid</span>
+              <span class="tile__num">04</span>
+            </div>
+            <h3 class="h3">Medicaid RFP calendar</h3>
+            <p class="tile__desc">Upcoming managed care procurements and re-procurements by state, with incumbents, enrollment and the last rate certification.</p>
+            <p class="tile__src">State portals · MCO enrollment · rate certifications</p>
+            <a href="#contact" class="tile__link" data-program="free">Get the full calendar <span aria-hidden="true">→</span></a>
+          </div>
+          <div class="timeline" aria-label="Illustrative procurement timeline">
+            <div class="timeline__axis" aria-hidden="true"><span>Q1 2027</span><span>Q2 2027</span><span>Q3 2027</span><span>Q4 2027</span></div>
+            <div class="timeline__track">
+              <div class="timeline__item" style="--x:6%"><b>State A</b><span>Incumbent</span></div>
+              <div class="timeline__item timeline__item--alt" style="--x:31%"><b>State B</b><span>Challenger</span></div>
+              <div class="timeline__item timeline__item--alt" style="--x:80%"><b>State C</b><span>Challenger</span></div>
+            </div>
+            <p class="timeline__note">Illustrative states</p>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ Data ============ -->
+  <section class="section data" id="data">
+    <div class="wrap data__wrap">
+      <div class="data__aside">
+        <p class="kicker reveal">The data</p>
+        <h2 class="h2 reveal" style="--d:.06s">Every public source a plan needs, joined on contract, county, NPI and parent company.</h2>
+
+        <div class="keys reveal" style="--d:.12s" aria-hidden="true">
+          <svg viewBox="0 0 320 220" class="keys__svg">
+            <g class="keys__lines">
+              <path d="M160 110 L60 40"/><path d="M160 110 L260 40"/><path d="M160 110 L60 180"/><path d="M160 110 L260 180"/>
+            </g>
+            <circle cx="160" cy="110" r="34" class="keys__hub"/>
+            <text x="160" y="106" class="keys__hub-t">one</text>
+            <text x="160" y="122" class="keys__hub-t">model</text>
+          </svg>
+          <span class="keys__chip" style="--x:18%;--y:18%">Contract ID</span>
+          <span class="keys__chip" style="--x:82%;--y:18%">County</span>
+          <span class="keys__chip" style="--x:18%;--y:82%">NPI</span>
+          <span class="keys__chip" style="--x:82%;--y:82%">Parent org</span>
+        </div>
+
+        <p class="data__note reveal">Every number cites its file, release and page. New CMS releases are loaded on their publication date, and your workspace alerts you to what changed for your contracts.</p>
+      </div>
+
+      <div class="data__main">
+        <div class="filters reveal" role="group" aria-label="Filter sources">
+          <button type="button" class="filter is-active" data-filter="all" aria-pressed="true">All <span>14</span></button>
+          <button type="button" class="filter" data-filter="ma" aria-pressed="false">MA &amp; Part D</button>
+          <button type="button" class="filter" data-filter="medicaid" aria-pressed="false">Medicaid</button>
+          <button type="button" class="filter" data-filter="duals" aria-pressed="false">Dual eligibles</button>
+          <button type="button" class="filter" data-filter="providers" aria-pressed="false">Providers &amp; cost</button>
+        </div>
+
+        <ul class="sources reveal" id="sources">
+          <li data-cat="ma"><a href="https://www.cms.gov/data-research/statistics-trends-and-reports/medicare-advantagepart-d-contract-and-enrollment-data" target="_blank" rel="noopener">Enrollment by contract, plan, state and county</a><span class="cad">Monthly</span></li>
+          <li data-cat="ma"><a href="https://www.cms.gov/data-research/statistics-trends-and-reports/medicare-advantagepart-d-contract-and-enrollment-data/benefits-data" target="_blank" rel="noopener">Plan Benefit Packages (PBP), 2001–2027</a><span class="cad">Annual</span></li>
+          <li data-cat="ma"><a href="https://www.cms.gov/files/document/2027-announcement.pdf" target="_blank" rel="noopener">Ratebooks, benchmarks and Rate Announcement</a><span class="cad">April</span></li>
+          <li data-cat="ma"><a href="https://www.cms.gov/newsroom/fact-sheets/2027-medicare-advantage-part-d-star-ratings" target="_blank" rel="noopener">Star Ratings, cut points and data tables</a><span class="cad">October</span></li>
+          <li data-cat="ma"><a href="https://www.cms.gov/medicare/health-drug-plans/medical-loss-ratio" target="_blank" rel="noopener">Part C and D MLR, with supplemental spend</a><span class="cad">Annual</span></li>
+          <li data-cat="ma"><span class="src">CMS-HCC risk model, V24 and V28</span><span class="cad">Annual</span></li>
+          <li data-cat="ma"><a href="https://www.cms.gov/data-research/statistics-trends-and-reports/medicare-advantagepart-d-contract-and-enrollment-data" target="_blank" rel="noopener">Landscape, service areas, crosswalks, SNP report</a><span class="cad">Monthly</span></li>
+          <li data-cat="medicaid"><a href="https://www.medicaid.gov/medicaid/managed-care/enrollment-report" target="_blank" rel="noopener">Medicaid managed care enrollment by plan</a><span class="cad">Annual</span></li>
+          <li data-cat="medicaid"><a href="https://data.medicaid.gov/" target="_blank" rel="noopener">Medicaid enrollment, drug utilization, NADAC</a><span class="cad">Monthly</span></li>
+          <li data-cat="medicaid"><span class="src">State rate certifications, read by AI with page citations</span><span class="cad">Per state</span></li>
+          <li data-cat="duals"><span class="src">D-SNP integration status and dual enrollment</span><span class="cad">Annual</span></li>
+          <li data-cat="providers"><a href="https://www.cms.gov/medicare/health-drug-plans/medicare-advantage-application" target="_blank" rel="noopener">Network adequacy (HSD) criteria by county</a><span class="cad">Annual</span></li>
+          <li data-cat="providers"><a href="https://download.cms.gov/nppes/NPI_Files.html" target="_blank" rel="noopener">NPPES provider registry</a><span class="cad">Weekly</span></li>
+          <li data-cat="providers"><a href="https://data.cms.gov/" target="_blank" rel="noopener">Medicare FFS cost and utilization by county</a><span class="cad">Annual</span></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ Bid Platform (dark) ============ -->
+  <section class="section dark" id="bid-platform">
+    <div class="dark__glow" aria-hidden="true"></div>
+    <div class="wrap">
+      <div class="split-head split-head--dark">
+        <div>
+          <p class="kicker kicker--light reveal">The Bid Platform</p>
+          <h2 class="h2 reveal" style="--d:.06s">Public data shows the market. Your data shows what really happened to your bid.</h2>
+        </div>
+        <div>
+          <p class="lede reveal" style="--d:.12s">The same model that powers the free tools takes your claims, encounters and last year's BPT. Nothing is migrated: your actuals land next to the public benchmarks you already use.</p>
+          <div class="btn-row reveal" style="--d:.18s">
+            <a href="#contact" class="btn btn--lime" data-program="pilot">Scope a 4-week pilot <span aria-hidden="true">→</span></a>
+            <a href="#cost-walk" class="btn btn--glass">How the cost walk works <span aria-hidden="true">→</span></a>
+          </div>
+        </div>
+      </div>
+
+      <div class="bid">
+        <div class="pilot reveal">
+          <p class="pilot__label">How a pilot runs</p>
+          <ol class="pilot__steps">
+            <li><span class="pilot__n">1</span><div><b>Load one contract.</b><p>Last year's BPT, claims and encounters, in the shape you already have.</p></div></li>
+            <li><span class="pilot__n">2</span><div><b>Walk the cost.</b><p>Operational cost to regulatory cost to bid, every step named.</p></div></li>
+            <li><span class="pilot__n">3</span><div><b>See the variance.</b><p>Actual vs bid by service category and cost component, traced to the claim line.</p></div></li>
+            <li><span class="pilot__n">4</span><div><b>Fix the next bid.</b><p>Separate structural trend from one-off cost before the first Monday in June.</p></div></li>
+          </ol>
+        </div>
+
+        <div class="variance reveal" style="--d:.1s" aria-label="Illustrative actual vs bid variance">
+          <div class="variance__head">
+            <p class="variance__title">Actual vs bid, PMPM · CY2026</p>
+            <span class="tag tag--dark">Illustrative</span>
+          </div>
+          <div class="variance__legend" aria-hidden="true"><span class="lg lg--under">Under bid</span><span class="lg lg--over">Over bid</span></div>
+          <div class="variance__rows" id="variance">
+            <button type="button" class="vrow" data-note="Part B drug trend is structural and belongs in the bid."><span class="vrow__l">Part B drugs</span><span class="vrow__track"><i class="vrow__bar is-over" style="--w:44%"></i></span><span class="vrow__v">+9.8%</span></button>
+            <button type="button" class="vrow" data-note="Most of the inpatient overrun came from a few high-cost cases and should be smoothed, not trended."><span class="vrow__l">Inpatient</span><span class="vrow__track"><i class="vrow__bar is-over" style="--w:20%"></i></span><span class="vrow__v">+4.1%</span></button>
+            <button type="button" class="vrow" data-note="Outpatient ran slightly over bid."><span class="vrow__l">Outpatient</span><span class="vrow__track"><i class="vrow__bar is-over" style="--w:11%"></i></span><span class="vrow__v">+2.3%</span></button>
+            <button type="button" class="vrow" data-note="Professional came in close to the bid."><span class="vrow__l">Professional</span><span class="vrow__track"><i class="vrow__bar is-over" style="--w:4%"></i></span><span class="vrow__v">+0.8%</span></button>
+            <button type="button" class="vrow" data-note="Supplemental came in under, mostly because dental use was lower than priced."><span class="vrow__l">Supplemental</span><span class="vrow__track"><i class="vrow__bar is-under" style="--w:14%"></i></span><span class="vrow__v">−3.0%</span></button>
+          </div>
+          <p class="variance__foot" id="variance-note" aria-live="polite">Each bar opens to the claim lines behind it. Select a row.</p>
+        </div>
+      </div>
+
+      <div class="walk reveal" id="cost-walk">
+        <p class="walk__label">The cost walk</p>
+        <ol class="walk__flow">
+          <li><span class="walk__step">Operational cost</span><small>Claims and encounters as paid</small></li>
+          <li aria-hidden="true" class="walk__arrow"></li>
+          <li><span class="walk__step">Regulatory cost</span><small>Mapped to BPT service categories, completed with lag factors</small></li>
+          <li aria-hidden="true" class="walk__arrow"></li>
+          <li><span class="walk__step walk__step--lime">Bid</span><small>Compared to bid PMPM, every adjustment named</small></li>
+        </ol>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ Plans ============ -->
+  <section class="section plans" id="plans">
+    <div class="wrap">
+      <div class="center-head">
+        <p class="kicker reveal">Plans</p>
+        <h2 class="h2 reveal" style="--d:.06s">Start free. Upgrade when the public picture raises a question only your data can answer.</h2>
+      </div>
+
+      <div class="path reveal" aria-hidden="true">
+        <span>Free</span><i></i><span>Subscribe</span><i></i><span>Bring your data</span>
+      </div>
+
+      <div class="tiers">
+        <article class="tier reveal">
+          <p class="tier__step">Step 1 · Free</p>
+          <h3 class="h3">Free</h3>
+          <p class="tier__price"><b>$0</b> · work email</p>
+          <ul class="tier__list">
+            <li>Contract scorecard and county market sheet</li>
+            <li>V28 impact check</li>
+            <li>Medicaid RFP calendar</li>
+            <li>Weekly market brief</li>
+          </ul>
+          <a href="#free-tools" class="btn btn--line">Start free</a>
+        </article>
+
+        <article class="tier tier--mid reveal" style="--d:.08s">
+          <p class="tier__step">Step 2 · Subscribe</p>
+          <h3 class="h3">Pro workspace</h3>
+          <p class="tier__price">Annual subscription per plan</p>
+          <ul class="tier__list">
+            <li>Every public dataset, joined and sourced</li>
+            <li>AI assistant on the web and in your own AI tools (MCP)</li>
+            <li>Bid benchmark workbench and Stars simulator</li>
+            <li>Medicaid and D-SNP intelligence, alerts and exports</li>
+          </ul>
+          <a href="#contact" class="btn btn--indigo" data-program="pro">Talk to sales</a>
+        </article>
+
+        <article class="tier tier--top reveal" style="--d:.16s">
+          <span class="tier__ribbon">Your data</span>
+          <p class="tier__step">Step 3 · Bring your data</p>
+          <h3 class="h3">Bid Platform</h3>
+          <p class="tier__price">Scoped per contract or state</p>
+          <ul class="tier__list">
+            <li>Actual vs bid, traced to the claim line</li>
+            <li>Operational to regulatory cost walk</li>
+            <li>Encounter and rate defence for Medicaid</li>
+            <li>The full platform, HIPAA-ready</li>
+          </ul>
+          <a href="#contact" class="btn btn--lime" data-program="pilot">Scope a pilot</a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ Why ============ -->
+  <section class="section why" id="why">
+    <div class="wrap">
+      <div class="split-head">
+        <div>
+          <p class="kicker reveal">Why Plumbline</p>
+          <h2 class="h2 reveal" style="--d:.06s">Most public-data tools stop at the market. We carry on to your own numbers.</h2>
+        </div>
+      </div>
+
+      <div class="versus reveal" role="table" aria-label="Comparison with typical public-data tools">
+        <div class="versus__row versus__row--head" role="row">
+          <span role="columnheader">What plans need</span>
+          <span role="columnheader">Typical public-data tools</span>
+          <span role="columnheader">Plumbline</span>
+        </div>
+        <div class="versus__row" role="row"><span role="rowheader">MA market, benefits and Stars</span><span role="cell" data-label="Typical tools">Yes</span><span role="cell" data-label="Plumbline">Yes, plus benchmark and rebate math</span></div>
+        <div class="versus__row" role="row"><span role="rowheader">Medicaid depth</span><span role="cell" data-label="Typical tools">Fee schedules and rosters</span><span role="cell" data-label="Plumbline">Rate certifications, MLR, quality, RFPs</span></div>
+        <div class="versus__row" role="row"><span role="rowheader">Dual eligibles</span><span role="cell" data-label="Typical tools">Rarely</span><span role="cell" data-label="Plumbline">D-SNP integration, SMAC, dual population</span></div>
+        <div class="versus__row" role="row"><span role="rowheader">Regulatory impact</span><span role="cell" data-label="Typical tools">News and memos</span><span role="cell" data-label="Plumbline">What each CMS change means for your contracts</span></div>
+        <div class="versus__row" role="row"><span role="rowheader">Your own data</span><span role="cell" data-label="Typical tools">Custom projects</span><span role="cell" data-label="Plumbline">Same model: actual vs bid, cost walks, encounters</span></div>
+        <div class="versus__row" role="row"><span role="rowheader">Compliance</span><span role="cell" data-label="Typical tools">Not covered</span><span role="cell" data-label="Plumbline">CMS-0057-F APIs and network adequacy</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ Research + contact ============ -->
+  <section class="section finale" id="research">
+    <div class="wrap">
+      <div class="finale__card">
+        <div class="finale__research reveal">
+          <p class="kicker kicker--light">Research</p>
+          <h2 class="h2">Plumbline Research</h2>
+          <p class="lede">Weekly findings from public data: V28 winners and losers, benefit cuts, Star cut-point moves and new Medicaid RFPs. Every claim traces to its file.</p>
+          <ul class="topics" aria-label="Recent topics">
+            <li>V28 winners and losers</li><li>Benefit cuts</li><li>Star cut-point moves</li><li>New Medicaid RFPs</li>
+          </ul>
+
+          <form class="brief" id="brief-form" novalidate>
+            <p class="brief__label">The weekly market brief for MA and Medicaid plans, and a free account.</p>
+            <label for="nl-email" class="sr-only">Work email</label>
+            <div class="brief__row">
+              <input id="nl-email" type="email" name="email" required autocomplete="email" inputmode="email" maxlength="254" placeholder="Work email">
+              <button type="submit" class="btn btn--lime">Send me the brief</button>
+            </div>
+            <div class="hp" aria-hidden="true"><label for="nl-company">Company</label><input id="nl-company" type="text" name="company" tabindex="-1" autocomplete="off"></div>
+            <p class="form-status" id="brief-status" role="status" aria-live="polite"></p>
+          </form>
+        </div>
+
+        <div class="finale__contact reveal" style="--d:.1s" id="contact">
+          <h2 class="h3">Prefer to talk?</h2>
+          <p class="contact__sub">Book a demo, ask about Pro, or scope a Bid Platform pilot.</p>
+          <form class="contact" id="contact-form" novalidate>
+            <div class="field">
+              <label for="c-name">Name</label>
+              <input id="c-name" name="name" type="text" autocomplete="name" required>
+            </div>
+            <div class="field">
+              <label for="c-email">Work email</label>
+              <input id="c-email" name="email" type="email" autocomplete="email" required>
+            </div>
+            <div class="field">
+              <label for="c-org">Health plan</label>
+              <input id="c-org" name="org" type="text" autocomplete="organization">
+            </div>
+            <div class="field">
+              <label for="c-program">I'm interested in</label>
+              <select id="c-program" name="program">
+                <option value="demo">A demo</option>
+                <option value="free">Free tools and the RFP calendar</option>
+                <option value="pro">Pro workspace</option>
+                <option value="pilot">Bid Platform pilot</option>
+              </select>
+            </div>
+            <button type="submit" class="btn btn--ink btn--block">Send request</button>
+            <p class="form-status" id="contact-status" role="status" aria-live="polite"></p>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<!-- ============ Footer ============ -->
+<footer class="footer">
+  <div class="wrap">
+    <div class="footer__top">
+      <div>
+        <a href="#top" class="brand brand--light" aria-label="Plumbline home">
+          <img src="assets/img/logo3.svg" alt="" width="30" height="30"><span class="brand__word">Plumbline</span>
+        </a>
+        <p class="footer__tag">Medicare Advantage and Medicaid intelligence, from public data to your own.</p>
+      </div>
+      <nav class="footer__cols" aria-label="Footer">
+        <div><p>Product</p><a href="#free-tools">Free tools</a><a href="#data">Data</a><a href="#bid-platform">Bid Platform</a><a href="#plans">Plans and pricing</a></div>
+        <div><p>Learn</p><a href="#ask">How it works</a><a href="#why">Why Plumbline</a><a href="#research">Research</a></div>
+        <div><p>Company</p><a href="#contact">Contact</a><a href="#contact" data-program="demo">Book a demo</a></div>
+      </nav>
+    </div>
+    <p class="footer__word" aria-hidden="true">Plumbline</p>
+    <div class="footer__bottom">
+      <span>© 2026 Plumbline</span>
+      <span>Figures on this page are illustrative. Public data from CMS, Medicaid.gov and state agencies.</span>
+    </div>
+  </div>
+</footer>
+
+<script src="js/demo-data.js" defer></script>
+<script src="js/main3.js" defer></script>
+</body>
+</html>

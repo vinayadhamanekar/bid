@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="none" role="img" aria-label="Plumbline">
+  <rect width="32" height="32" rx="9" fill="#33204F"/>
+  <path d="M16 6v12" stroke="#FF8A3D" stroke-width="2" stroke-linecap="round"/>
+  <path d="M16 17.5l4.5 4.5L16 26.5 11.5 22z" fill="#FF8A3D"/>
+  <path d="M9 9h14" stroke="#A78BFA" stroke-width="2" stroke-linecap="round"/>
+</svg>

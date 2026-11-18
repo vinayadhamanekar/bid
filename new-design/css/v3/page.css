@@ -1,0 +1,66 @@
+/* ==========================================================================
+   Plumbline v3 · page.css (index3.html only, loaded last)
+   1. Header, navigation and section heading font: Plus Jakarta Sans
+   2. Header scrolls with the page (no fixed/sticky bar)
+   3. "How it works" section: index.html design, answer kept in view
+   ========================================================================== */
+
+@font-face {
+  font-family: "Plus Jakarta Sans";
+  src: url("../../fonts/plus-jakarta-sans-latin.woff2") format("woff2");
+  font-weight: 400 800; font-style: normal; font-display: swap;
+}
+:root {
+  --head: "Plus Jakarta Sans", "Segoe UI", system-ui, sans-serif;
+  /* Section headings (and the other display text that shares this token) use the header font too */
+  --display: var(--head);
+}
+
+/* ---------- 1. Header + heading font ---------- */
+/* Tracking tuned for Plus Jakarta Sans, which sets wider than the original heading face */
+.display { font-weight: 800; letter-spacing: -0.04em; line-height: 1.02; }
+.h2 { font-weight: 750; letter-spacing: -0.035em; line-height: 1.08; }
+.h3 { font-weight: 700; letter-spacing: -0.025em; }
+.tile--feature .h3 { letter-spacing: -0.03em; }
+.nav, .nav .btn, .mega, .sheet, .brand__word { font-family: var(--head); }
+.brand__word { font-weight: 800; letter-spacing: -0.035em; }
+.nav__link, .nav__ghost { font-weight: 600; letter-spacing: -0.005em; }
+.sheet__links a { font-family: var(--head); font-weight: 700; letter-spacing: -0.025em; }
+.mega__item b { font-weight: 700; }
+
+/* ---------- 2. Header scrolls with the page ---------- */
+html { scroll-padding-top: 16px; }
+.nav { position: absolute; }
+.nav__bar { background: rgba(255,255,255,.78); box-shadow: var(--shadow-sm); }
+
+/* ---------- 3. Ask section ----------
+   Same layout and design as index.html (vertical options; the selected one
+   expands with its details). Only the scrolling is different:
+   - Desktop: the answer console stays pinned in view while you scroll down
+     the options, so option 4 and its answer are always on screen together.
+     (index.html pins the options instead, under its fixed header.)
+   - Tablet/phone: js/main2.js scrolls to the console after a tap. */
+.ask__tabs { position: static; }
+@media (min-width: 1021px) {
+  .console { position: sticky; top: 24px; max-height: calc(100vh - 48px); }
+  .console__panel { min-height: 0; overflow-y: auto; }
+}
+
+/* ---------- 4. Orange headings (v3) ----------
+   Section headings are burnt orange (5.2:1 on the cream background).
+   The hero headline stays dark with its key phrase in orange.
+   Headings on dark panels use the brighter orange. */
+.h2, .h3 { color: var(--indigo); }
+.display { color: var(--ink); }
+.display .mark { color: var(--indigo); }
+.mark::after { background: #FED7AA; }
+.dark .h2, .tier--top .h3, .tile--feature .h3, .finale__research .h2 { color: var(--lime); }
+.finale__research .h2 { color: #fff; }
+.finale__contact .h3 { color: var(--indigo); }
+.atab__title, .tile .h3 { color: var(--ink); }
+.tile.tile--feature .h3 { color: var(--lime); }
+.atab-item.is-active .atab__title { color: var(--indigo); }
+.brand__word { color: var(--ink); }
+.brand--light .brand__word { color: #fff; }
+.walk__step--lime { color: var(--ink); }
+.finale__research .kicker { color: #FED7AA; }

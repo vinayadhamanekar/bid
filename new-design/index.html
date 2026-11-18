@@ -2,6 +2,10 @@
 <html lang="en" class="no-js">
 <head>
   <meta charset="utf-8">
+  <!-- Hosting fix: on a URL without a trailing slash (e.g. vercel.app/new-design) the
+       relative css/, js/, fonts/ and assets/ paths resolve from the site root and 404.
+       Add the slash before anything loads. Does nothing for file:// or URLs ending in / or a file name. -->
+  <script>(function(){var p=location.pathname;if(/^https?:$/.test(location.protocol)&&!/(\/|\.[a-z0-9]+)$/i.test(p)){location.replace(p+'/'+location.search+location.hash);}})();</script>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#F4F3EE">
   <!--
